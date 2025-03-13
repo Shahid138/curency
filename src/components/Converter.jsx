@@ -1,5 +1,3 @@
-//Currencies = https://api.currencybeacon.com/v1/currencies?api_key=sDeunUZm7PHYrCo7EZzBSynU37ZnH9zG&type=fiat
-
 import React, { useEffect, useState } from "react";
 
 const Converter = () => {
@@ -12,8 +10,9 @@ const Converter = () => {
 
   const fetchCurrencies = async () => {
     try {
+        const apiKey = import.meta.env.VITE_CURRENCY_API_KEY;
       const res = await fetch(
-        "https://api.currencybeacon.com/v1/currencies?api_key=sDeunUZm7PHYrCo7EZzBSynU37ZnH9zG&type=fiat"
+        `https://api.currencybeacon.com/v1/currencies?api_key=${apiKey}&type=fiat`
       );
       const data = await res.json();
       setCurrencies(data);
@@ -35,9 +34,9 @@ const Converter = () => {
     if (!amount) return;
     setConverting(true);
     try {
+        const apiKey = import.meta.env.VITE_CURRENCY_API_KEY;
       const res = await fetch(
-        //Convert = https://api.currencybeacon.com/v1/convert?api_key=sDeunUZm7PHYrCo7EZzBSynU37ZnH9zG&from=USD&to=INR&amount=1
-        `https://api.currencybeacon.com/v1/convert?api_key=sDeunUZm7PHYrCo7EZzBSynU37ZnH9zG&from=${baseCurrency}&to=${foreignCurrency}&amount=${amount}`
+        `https://api.currencybeacon.com/v1/convert?api_key=${apiKey}&from=${baseCurrency}&to=${foreignCurrency}&amount=${amount}&type=fiat`
       );
       const data = await res.json();
       setConvertedAmount(data.response.value);
@@ -46,12 +45,12 @@ const Converter = () => {
     }
   };
 
-  // Check if currencies is an object and convert to array if needed
+  
   const currencyArray =
     currencies && typeof currencies === "object"
       ? Object.entries(currencies).map(([key, value]) => ({
           ...value,
-          uniqueKey: key, // Add a uniqueKey property using the object key
+          uniqueKey: key,
         }))
       : [];
 
