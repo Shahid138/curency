@@ -36,7 +36,7 @@ const Footer = () => {
               System Design
               <ExternalLink size={16} />
             </a>
-          </div>
+          </div>  
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
