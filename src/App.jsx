@@ -5,7 +5,7 @@ import Header from './components/HEader'
 
 function App() {
   return (
-    <div>
+    <div className='bg-[#111010]'>
     <Header />
     <Converter />
     <Footer />
