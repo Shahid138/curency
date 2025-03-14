@@ -95,7 +95,7 @@ const Converter = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto mt-10 p-6 bg-[#111010] rounded-3xl border border-gray-800 px-6 py-8 md:px-20 md:py-20">
+    <div className="max-w-6xl mx-auto mt-10 p-6 dark:bg-[#111010] rounded-3xl border border-gray-800 px-6 py-8 md:px-20 md:py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-6">
           <div className="space-y-2">
@@ -113,7 +113,7 @@ const Converter = () => {
               step="0.01"
               placeholder="0.00"
               onChange={(e) => setAmount(parseFloat(e.target.value) || 0)}
-              className="w-full text-white bg-[#111010] rounded-lg border border-gray-800 p-3 focus:border-[#5B3CFA] focus:outline-none"
+              className="w-full dark:text-white dark:bg-[#111010] rounded-lg border border-gray-800 p-3 focus:border-[#5B3CFA] focus:outline-none"
             />
           </div>
 
@@ -122,13 +122,13 @@ const Converter = () => {
               htmlFor="baseCurrency"
               className="text-gray-500 text-sm font-semibold"
             >
-              From
+              Base Currency
             </label>
             <select
               id="baseCurrency"
               value={baseCurrency}
               onChange={(e) => setBaseCurrency(e.target.value)}
-              className="w-full rounded-lg border border-gray-800 text-white bg-[#111010] p-3 focus:border-[#5B3CFA] focus:outline-none"
+              className="w-full rounded-lg border border-gray-800 dark:text-white dark:bg-[#111010] p-3 focus:border-[#5B3CFA] focus:outline-none"
             >
               {currencyArray.map((currency) => (
                 <option
@@ -144,7 +144,7 @@ const Converter = () => {
           <div className="flex items-center justify-center my-4">
             <button
               onClick={handleSwap}
-              className="flex items-center gap-2 p-2 px-4 text-gray-500 text-sm font-semibold rounded-full border border-gray-800 bg-[#111010] hover:text-white transition-colors"
+              className="flex items-center gap-2 p-2 px-4 text-gray-500 text-sm font-semibold rounded-full border border-gray-800 dark:bg-[#111010] hover:text-black dark:hover:text-white transition-colors"
               aria-label="Swap currencies"
             >
               <ArrowLeftRight size={15} />
@@ -157,13 +157,13 @@ const Converter = () => {
               htmlFor="foreignCurrency"
               className="text-gray-500 text-sm font-semibold"
             >
-              To
+              Foreign Currency
             </label>
             <select
               id="foreignCurrency"
               value={foreignCurrency}
               onChange={(e) => setForeignCurrency(e.target.value)}
-              className="w-full rounded-lg border border-gray-800 text-white bg-[#111010] p-3 focus:border-[#5B3CFA] focus:outline-none"
+              className="w-full rounded-lg border border-gray-800 dark:text-white dark:bg-[#111010] p-3 focus:border-[#5B3CFA] focus:outline-none"
             >
               {currencyArray.map((currency) => (
                 <option
@@ -196,8 +196,8 @@ const Converter = () => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <div className="border border-gray-800 bg-[#151515] text-white rounded-xl ml-8 pl-10 -mt-72 h-auto py-6 flex flex-col justify-center">
-            <div className="text-gray-400 mb-1">
+          <div className="border border-gray-800 dark:bg-[#151515] dark:text-white rounded-xl ml-8 pl-10 -mt-72 h-auto py-6 flex flex-col justify-center">
+            <div className="text-gray-600 mb-1">
               {amount > 0
                 ? `${formatNumber(amount)} ${baseCurrency} =`
                 : "Enter an amount to convert"}
@@ -208,7 +208,7 @@ const Converter = () => {
                   {formatNumber(convertedAmount)} {foreignCurrency}
                 </>
               ) : (
-                <span className="text-gray-500">—</span>
+                <span className="text-gray-600">—</span>
               )}
             </div>
             <div className="text-xs text-gray-500 mt-2">

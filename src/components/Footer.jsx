@@ -1,23 +1,17 @@
+// In your Footer component
 import { ExternalLink, Moon, Sun } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 
-const Footer = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    // Here you would typically implement actual theme switching logic
-  };
-
+const Footer = ({ toggleTheme, isDarkMode }) => {
   return (
-    <footer className="mt-5">
+    <footer className="py-6 pt-8">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-gray-100">Built by</span>
+              <span className="text-gray-600 dark:text-gray-100">Built by</span>
               <a 
-                href="https://yourportfolio.com" 
+                href="https://linktr.ee/QTshahid" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 text-blue-600 hover:text-blue-800 transition-colors"
@@ -31,10 +25,10 @@ const Footer = () => {
               href="https://yoursystemdesign.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center -mt-3 -ml-5 gap-1 text-gray-100 hover:text-blue-800 transition-colors"
+              className="flex items-center -mt-3 -ml-5 gap-1 text-gray-800 dark:text-gray-100 hover:text-blue-800 transition-colors"
             >
               System Design
-              <ExternalLink size={16} />
+              <ExternalLink size={15} />
             </a>
           </div>  
           <button
