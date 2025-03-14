@@ -1,4 +1,3 @@
-// In your Footer component
 import { ExternalLink, Moon, Sun } from "lucide-react";
 import React from "react";
 
