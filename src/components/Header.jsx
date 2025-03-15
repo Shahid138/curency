@@ -6,9 +6,9 @@ const Header = () => {
     <header className=" bg-white pt-20 dark:bg-[#111010]">
       <div className="flex justify-between items-center max-w-6xl mx-auto px-4">
         <div className="flex items-center">
-          <img src="/logo.png" className="size-8 mr-2" alt="Currencee logo" />
+          <img src="/logo.svg" className="size-16 mr-2" alt="Currencee logo" />
           <div>
-            <h1 className="font-bold text-black dark:text-white text-4xl">Currencee</h1>
+            <h1 className="font-bold text-black dark:text-white text-4xl">Curency</h1>
             <p className="text-gray-700 dark:text-gray-300 text-sm">
               The world's most trusted, fast and secure currency converter
             </p>
